@@ -1,14 +1,8 @@
-<<<<<<< HEAD
 import { Card, Filter } from "../components";
 import "../styles/Gallery.scss"
-import { Col, Input, InputGroup, Row } from 'reactstrap';
-=======
-import { Card } from "../components";
 import { UploadPopup } from "../components";
-import "../styles/Gallery.scss"
-import { Button, Col, Input, InputGroup, Row } from 'reactstrap';
+import { Col, InputGroup, Row } from 'reactstrap';
 import React from "react";
->>>>>>> e86c5f90e7c64226b1ebd31f7e922255b06bdf0d
 
 
 const tempCard = {
