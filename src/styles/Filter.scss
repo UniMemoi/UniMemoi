@@ -2,16 +2,18 @@
   margin: 1rem auto;
   width: 80%;
 
-  .ndropdown-toggle {
+  .ndropdown-toggle, .ndropdown-item {
     width: 100%;
+    border: 0;
     background-color: rgba(255, 255, 255, 0.9);
     color: #000000;
   }
-  
-  .ndropdown-menu, .ndropdown-item {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+
+  .ndropdown-toggle, .ndropdown-item:last-child {
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
   }
+
 }
 
 

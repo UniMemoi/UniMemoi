@@ -7,9 +7,9 @@ const Filter = (props) => {
 
   return (
     <div className={"ndropdown"}>
-      <button className={"ndropdown-toggle"}
+      <button className={"ndropdown-toggle"} style={{borderRadius: show ? "0.5rem 0.5rem 0 0" : "0.5rem"}}
         onClick={() => setShow(!show)}
-      >{props.action} by</button>
+      >{props.action} by {show ? "▲" : "▼"}</button>
       <div className={"ndropdown-menu"} style={{display: show ? "block" : "none"}}>
         {props.children}
       </div>
