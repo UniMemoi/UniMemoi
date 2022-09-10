@@ -1,0 +1,140 @@
+1
+Week 2 – Physical Layer
+COMP90007
+Internet Technologies
+What is the Physical Layer
+Recall the layer hierarchy from network reference models
+The physical layer is the lowest Layer in OSI model
+The physical layer’s properties in TCP/IP model are in  the “host-to-network” division
+"The physical layer is concerned with the mechanical, electrical and timing interfaces of the network"
+"Various physical media can be used to transmit data, but all of them are affected by a range of physical properties and hence have distinct differences"
+2
+First: What is a Link
+We can abstract a physical channel as a link
+We use a simplified link model: Considering the network has a connected link between two computers although reality may be more complex
+3
+10111..
+10111..
+Length =L metres
+Link Model Contd
+Bandwidth is usually treated as rate of transmission in bits/second
+"Delay (in seconds) is the time required for the first bit to travel from the first computer A to the second, computer B"
+4
+Examples
+We need about 1 kbit/sec to transmit voice. 
+Bandwidth of single mode fibre can reach     1 Tbit/sec.
+How many voice calls can be transmitted through an Fiber Optic Cable?
+""
+5
+1012 / 103= 1 billion calls
+""
+Tbit/s
+""
+kbit/s
+""
+Message Latency
+Latency is the time delay associated 
+    with sending a message over a link
+This is made of up two parts related to the link model
+Transmission delay: 
+T-delay = Message in bits / Rate of transmission 
+= M/R seconds
+Propagation delay
+P-delay= length of the channel / speed of signals
+Length / Speed of signal (e.g. 2/3 of speed of light for wire)
+Latency = L = M/R + P-delay
+""
+6
+Example -1
+"A home computer is connected to an ISP server through 56 K bps modem. Assuming a frame size of 5600 bits, compute P-Delay and T-Delay for the link. Assume speed of signal = 2/3 C and length of the link is  5 K metres."
+T-delay = 
+P-delay =  
+Latency =
+7
+5600 (bits) / 56 000 (kbps) = 100 msec
+5 (km) / 200000 (km/s) = 0.025 msec
+100.025 msec
+Example-2
+"Now for the previous question, assume a countrywide optical broadband link of length 1000 kms of bandwidth 100 M bits/sec. Assuming a frame size of 5600 bits, compute P-Delay and T-Delay for the link. Assume speed of signal = C = 300000 km/sec."
+T-delay = 
+P-delay =
+Latency =
+8
+5600 (bits) / 100 000 000 (bits/s) = 0.056 msec
+1000 (km) / 300000 (km/s) = 3.33 msec
+3.386 msec
+Fun Fact: Thinking on Networks for Very Large Data Transfer
+"While networks are increasingly becoming the default means by which data is transferred, there are other options for data transfer – consider removable media such as tapes, CD ROMs, DVDs, USBs "
+"Cost-wise, such removable media are often more efficient on a per Mb/Gb basis"
+Why?
+9
+Fun Fact Contd.
+…using such media to transfer data introduces a significant delay but as they say “never underestimate the bandwidth of a car boot full of DVD’s”:
+"1000 DVD’s x 4300Mb at 100km/h over distance of 100 kms = 4.3Tb / hr or 1.2 Gbps, not bad!"
+"At $5/DVD, plus say $20,000 for the car, that’s $25,000 for a 1.2 Gbps data transfer over 100kms - to build a 1 Gbps network over 100km costs in the order of $1 million, so for a once of transfer better to use a car!"
+""
+Basically: Data transfer over a network is not always the most efficient method to use for extremely large data such as archival scientific data
+10
+The Bandwidth Revolution
+Evolutionary steps in available bandwidth:
+CPU speeds increase by a factor of ~20 per decade
+1981: PC 4.77Mhz vs 2001: PC 2 Ghz
+Bandwidth speeds increase by a factor of ~125 per decade (1981: Modem 56kbps vs 2001: Net 1Gbps)
+Current CPU speed now approaching physical limits - constrained by physical properties pertaining to granularity of engraving on silicon
+Current bandwidth available up to 50Tbps - vastly exceeding the rate at which we can convert electrical impulses to optical pulses… thus bandwidth is no longer the bottleneck for some applications…
+11
+Lets start with simple concepts: Signal Attenuation
+How far and how much data a medium can carry has a lot to do with signal attenuation:
+“Attenuation is the loss or reduction in the amplitude (strength) of a signal as it passes through a medium.”
+Example is electricity over a simple cable.
+12
+Simplest of Wires – Twisted Pair
+"Two insulated copper wires, twisted in helical (DNA) form."
+Twisting reduces radiance of waves from effectively parallel antennae
+"Distance up to <5km, repeaters can extend this distance (large buildings often have km’s of cabling)"
+twisting reduces interference
+""
+cable with four twisted pairs
+Properties and Types of Twisted Pair
+"Bandwidth dependents on distance, wire quality/density"
+"Cat 3 - 2 wires, 4 pairs in sheath, 16Mhz"
+"Cat 5 - 2 wires, 4 pair in sheath, more twists = less interference, higher quality over longer distance, 100 Mhz"
+Cat 6 - 250 Mhz
+Cat 7…
+Note that bandwidth for cables is given with Mhz which we will come back to later…
+Coaxial Cable (“Co-ax”)
+Better shielding than twisted pair = higher speeds over greater distances
+"Copper core with insulation, mesh, and sheath"
+Bandwidth approaches 1Ghz
+Still widely used for cable TV/Internet
+""
+Fiber Optics
+"Optical transmission has 3 components: light source, transmission medium, detector"
+"Base Semantics: light = 1, no light = 0 (basic binary system)"
+Data transmission over a fibre of glass
+A detector generates electrical pulse when light hits it
+Common for high rates and long distances
+""
+Transmission of Light Through Fibre
+Fiber has enormous bandwidth (THz) and tiny signal loss – hence high rates over long distances and increasingly a popular choice…
+More on Fiber Optic Cables
+Single-mode
+Core so narrow light can’t even bounce around
+"Used with lasers for long distances, e.g., 100km"
+Multi-mode
+Other main type of fiber
+Light can bounce 
+"Used with LEDs for cheaper, shorter distance links"
+They come in bundles commonly
+Fiber Optic Connections
+"Connectors and Fiber Sockets (10-20% loss, but easy to configure)"
+"Mechanical Splice (10% loss, labour intensive)"
+"Fusion (<1% loss, but very specialised)"
+19
+Fiber Optic Networks Contd.
+"Fiber optic cable is a scalable network media - LAN, WAN, etc"
+Fibre optic cable can be considered either as a ring or as a bus network type (series of point to point connections)
+Fibre Optic Ring
+20
+Comparison of the properties of wires and fiber:
+Comparison: Wires and Fiber
