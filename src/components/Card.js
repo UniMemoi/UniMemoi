@@ -5,11 +5,21 @@ const Card = (props) => {
   const [isFront, setIsFront] = useState(true);
   
   if (isFront) return (
-    <div className={"card card-front"}>text</div>
+    <button
+      className={"mcard mcard-front"}
+      onClick={() => setIsFront(false)}
+    >
+        Topic
+    </button>
   )
 
   else return (
-    <div className={"card card-back"}>insert text here</div>
+    <button
+      className={"mcard mcard-back"}
+      onClick={() => setIsFront(true)}
+    >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    </button>
   )
 }
 

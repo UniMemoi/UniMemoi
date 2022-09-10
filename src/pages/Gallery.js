@@ -1,4 +1,5 @@
 import { Card } from "../components";
+import "../styles/Gallery.scss"
 import { Col, Row } from 'reactstrap';
 
 
@@ -13,8 +14,10 @@ const tempCardList = [
 
 const Gallery = () => {
   return (
-    <section>
-      <h1>Gallery</h1>
+    <section className="gallery">
+      <div className="topics">
+        <button className={"text-button"}>+ Add Topic</button>
+      </div>
       <div className={"card-grid"}>
         <Row md="4">
           {tempCardList.map((c, i) =>

@@ -1,12 +1,13 @@
-.card {
-  min-width: 7.5rem;
-  min-height: 10rem;
+.mcard {
+  width: 7.5rem;
+  height: 10rem;
 }
 
-.card-front {
-  background-color: var(--nav-color) !important;
+.mcard-front {
+  background-color: var(--card-color) !important;
 }
 
-.card-back {
+.mcard-back {
   background-color: #ffffff !important;
+  overflow: scroll;
 }
