@@ -47,25 +47,30 @@ const Gallery = () => {
     setIsOpen(!isOpen);
   };
 
-  const confirmUpload = () => {
+  const goToCardEdit = () => {
     setIsOpen(!isOpen);
+
   }
 
   const popupContent = 
   <div className="popup-content">
-      <div>
-        <label for="avatar">Upload a slide (.ppt) file: </label>
+      <form action="/upload" method="POST" encType="multipart/form-data">
+        <div>
+          <label for="avatar">Upload a slide (.ppt) file: </label>
         
-        <input type="file"
-          id="slide" name="slide"
-          accept=".pptx, .pdf">
-        </input>
-      </div>
+          <input type="file"
+            id="slide" name="slide"
+            accept=".pptx, .pdf">
+          </input>
+        </div>
 
-      <button
-          className={"text-button"}
-          onClick={confirmUpload}
-      > Confirm </button>
+        <button
+            type="submit"
+            value="Submit"
+            className={"text-button"}
+            onClick="location.href='https://google.com'"
+        > Confirm </button>
+      </form>
   </div>;
 
   return (
