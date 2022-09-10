@@ -1,0 +1,21 @@
+.ndropdown {
+  margin: auto;
+  width: 80%;
+
+  .ndropdown-toggle {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000000;
+  }
+  
+  .ndropdown-menu {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+
+    .ndropdown-item {
+      width: 100%;
+    }
+  }
+}
+
+

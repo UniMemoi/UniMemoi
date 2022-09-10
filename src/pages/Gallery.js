@@ -1,6 +1,6 @@
-import { Card } from "../components";
+import { Card, Filter } from "../components";
 import "../styles/Gallery.scss"
-import { Button, Col, Input, InputGroup, Row } from 'reactstrap';
+import { Col, Input, InputGroup, Row } from 'reactstrap';
 
 
 const tempCard = {
@@ -12,18 +12,30 @@ const tempCardList = [
   tempCard, tempCard, tempCard, tempCard, tempCard, tempCard, tempCard
 ]
 
+const sortDate = () => {
+  console.log("sort by date");
+}
+
+const sortName = () => {
+  console.log("sort by name");
+}
+
 const Gallery = () => {
   return (
     <div className="gallery">
     <div className="topics">
       <button className={"text-button"}>+ Add Topic</button>
       <InputGroup>
-        <input />
+        <Input />
         <button className={"text-button"}>Search</button>
       </InputGroup>
     </div>
       <section>
-        <div className={"card-nav"}>something</div>
+        <div className={"card-nav"}>
+          <Filter action="Sort"
+            fields={{"Date": sortDate, "Name": sortName}}
+          />
+        </div>
         <div className={"card-grid"}>
           <Row md="4">
             {tempCardList.map((c, i) =>
@@ -31,7 +43,7 @@ const Gallery = () => {
             )}
           </Row>
         </div>
-        <div>flip page</div>
+        <div className={"card-page"}>flip page</div>
       </section>
     </div>
   )
