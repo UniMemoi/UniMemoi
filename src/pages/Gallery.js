@@ -53,23 +53,42 @@ const Gallery = () => {
     setIsOpen(!isOpen);
   };
 
+  const confirmUpload = () => {
+    setIsOpen(!isOpen);
+  }
+
+  const popupContent = 
+  <div className="popup-content">
+      <div>
+        <label for="avatar">Upload a slide (.ppt) file: </label>
+        
+        <input type="file"
+          id="slide" name="slide"
+          accept=".pptx, .pdf">
+        </input>
+      </div>
+
+      <button
+          className={"text-button"}
+          onClick={confirmUpload}
+      > Confirm </button>
+  </div>;
+
   return (
     <div className="gallery">
       <div className="topics">
+          {isOpen && (
+              <UploadPopup
+                content={popupContent}
+                handleClose={togglePopup}
+              />
+            )}
 
         <button 
             type="button"
             value="Login"
             onClick={togglePopup}
             className={"text-button"}>+ Add Topic</button>
-          {isOpen && (
-              <UploadPopup
-                content={
-                  <p>//////////// E ///////////////</p>
-                }
-                handleClose={togglePopup}
-              />
-            )}
 
         <InputGroup>
           <input />
