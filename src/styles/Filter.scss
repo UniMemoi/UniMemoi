@@ -1,5 +1,5 @@
 .ndropdown {
-  margin: auto;
+  margin: 1rem auto;
   width: 80%;
 
   .ndropdown-toggle {
@@ -8,13 +8,9 @@
     color: #000000;
   }
   
-  .ndropdown-menu {
+  .ndropdown-menu, .ndropdown-item {
     width: 100%;
     background-color: rgba(255, 255, 255, 0.9);
-
-    .ndropdown-item {
-      width: 100%;
-    }
   }
 }
 

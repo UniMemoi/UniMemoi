@@ -11,11 +11,7 @@ const Filter = (props) => {
         onClick={() => setShow(!show)}
       >{props.action} by</button>
       <div className={"ndropdown-menu"} style={{display: show ? "block" : "none"}}>
-        {Object.entries(props.fields).map((item) => {
-          return <button className={"ndropdown-item"} onClick={item[1]}>
-            {item[0]}
-          </button>
-        })}
+        {props.children}
       </div>
     </div>
   )

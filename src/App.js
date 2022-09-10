@@ -1,6 +1,6 @@
 import "./styles/Global.scss";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home, Gallery } from "./pages";
+import { Home, Gallery, CardEdit } from "./pages";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -20,6 +20,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/gallery" element={<Gallery />} />
+              <Route path="/card/:id" element={<CardEdit />} />
             </Routes>
           </Router>
         </div>

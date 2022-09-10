@@ -22,6 +22,24 @@ const sortName = () => {
   console.log("sort by name");
 }
 
+const sortOpts = {
+  "Date": sortDate,
+  "Name": sortName
+}
+
+const filterSubj = () => {
+  console.log("filter by subj");
+}
+
+const filterDate = () => {
+  console.log("filter by date");
+}
+
+const filtOpts = {
+  "Date": filterDate,
+  "Subject": filterSubj
+}
+
 const Gallery = () => {
   const [isOpen, setIsOpen] = React.useState(false);
 
@@ -56,9 +74,20 @@ const Gallery = () => {
       </div>
       <section>
         <div className={"card-nav"}>
-          <Filter action="Sort"
-            fields={{"Date": sortDate, "Name": sortName}}
-          />
+          <Filter action="Sort">
+            {Object.entries(sortOpts).map((item) => {
+              return <button className={"ndropdown-item"} onClick={item[1]}>
+                {item[0]}
+              </button>
+            })}
+          </Filter>
+          <Filter action="Filter">
+            {Object.entries(filtOpts).map((item) => {
+              return <button className={"ndropdown-item"} onClick={item[1]}>
+                {item[0]}
+              </button>
+            })}
+          </Filter>
         </div>
         <div className={"card-grid"}>
           <Row md="4">
