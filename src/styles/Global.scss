@@ -37,12 +37,11 @@ footer {
 }
 
 .text-button {
+  white-space: nowrap;
   background-color: var(--function-color);
   color: #FFFFFF;
-  border-radius: 1rem;
   border: 0;
-  font-size: 2rem;
-  padding: 0.5rem;
+  font-size: 1rem;
 }
 
 main {
