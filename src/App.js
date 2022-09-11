@@ -2,8 +2,8 @@ import "./styles/Global.scss";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home, Gallery, PackageEdit } from "./pages";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from "./images/logo.svg";
 import { useEffect } from "react";
+import logo from "./images/logo.png";
 
 function App() {
   useEffect(() => {

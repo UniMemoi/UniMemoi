@@ -44,6 +44,12 @@
       grid-area: page;
       margin-top: 1rem;
     }
+
+    .card-set {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
   }
 
 }
