@@ -4,12 +4,12 @@ import "../styles/UploadPopup.scss";
 function UploadPopup(props) {
     // Adapted from https://www.cluemediator.com/create-simple-popup-in-reactjs
     return (
-        <div className="popup-box">
+        <div className="popup-box" style={props.style}>
              <div className="box">
                  <div className="close-container">
                      <span className="close-icon" onClick={props.handleClose}>&#215;</span>
                  </div>
-                {props.content}
+                {props.children}
             </div>
          </div>
     );

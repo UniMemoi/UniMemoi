@@ -1,6 +1,6 @@
 import "./styles/Global.scss";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Home, Gallery, CardEdit } from "./pages";
+import { Home, Gallery, PackageEdit } from "./pages";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from "./images/logo.svg";
 import { useEffect } from "react";
@@ -38,7 +38,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/gallery" element={<Gallery />} />
-              <Route path="/card/:id" element={<CardEdit />} />
+              <Route path="/package/:id" element={<PackageEdit />} />
             </Routes>
           </Router>
         </div>
