@@ -21,6 +21,14 @@
   overflow-x: hidden;
 }
 
-.modal textarea {
-  width: -webkit-fill-available;
+.modal {
+  textarea {
+    width: -webkit-fill-available;
+  }
+
+  .button-list {
+    display: flex;
+    justify-content: space-around;
+    margin: 1rem;
+  }
 }

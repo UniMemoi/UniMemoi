@@ -2,7 +2,7 @@ import "../styles/PackageEdit.scss"
 import React, { useState } from "react";
 import { Card, CardEdit } from "../components";
 import { Col, Input, InputGroup, Row } from 'reactstrap';
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 const tempCard = {
   front: "Question",
@@ -16,16 +16,18 @@ const tempCardData = [
 
 const PackageEdit = () => {
   const packageId = useParams().id;
-  const [editing, setEditing] = useState(false);
-  const toggle = () => setEditing((e) => !e);
+  const [editingCard, setEditingCard] = useState(false);
+  const toggleCard = () => setEditingCard((e) => !e);
   const [edCard, setEdCard] = useState({});
 
   // cardData = ...
 
   return (
     <div className="package-edit">
+      <h1>Slide card editor</h1>
       <div className="page-head">
-        <h1>Slide card editor</h1>
+        <button>Edit properties</button>
+        <Link className="text-button" to="/index.html" target="_blank" download>Export .APKG</Link>
         <InputGroup>
           <Input />
           <button className={"text-button"}>Search</button>
@@ -36,7 +38,7 @@ const PackageEdit = () => {
           <Row className="gy-4" md="1" lg="2" xl="3" xxl="4">
             {tempCardData.map((p, i) => <Col key={i}>
               <button onClick={() => {
-                setEditing(true);
+                setEditingCard(true);
                 setEdCard(p);
                 }}>
                 <Card isFront>{p.front}</Card>
@@ -47,9 +49,9 @@ const PackageEdit = () => {
         </div>
         <div className={"card-page"}>{"<< < 1 of 1 > >>"}</div>
       </section>
-      <CardEdit show={editing} toggle={toggle}
+      <CardEdit show={editingCard} toggle={toggleCard}
         card={edCard} clearCard={() => setEdCard({})}
-        style={editing ? {display: "block"} : {display: "none"}} />
+        style={editingCard ? {display: "block"} : {display: "none"}} />
     </div>
   );
 }

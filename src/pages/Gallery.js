@@ -54,7 +54,7 @@ const Gallery = () => {
   };
   
 const changePage = () => {
-  window.location.href = "/card/1";
+  window.location.href = "/package/1234";
   return false;
 }
 
