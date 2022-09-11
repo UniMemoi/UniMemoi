@@ -63,7 +63,7 @@ const changePage = () => {
       <form action="" method="" encType="multipart/form-data"  className="popup-content" onSubmit={changePage}>
         <div>
           <label for="avatar">Upload a slide (.ppt) file: </label>
-        
+          <br />
           <input type="file"
             id="slide" name="slide"
             accept=".pptx, .pdf">

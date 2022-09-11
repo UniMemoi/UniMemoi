@@ -3,8 +3,18 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home, Gallery, CardEdit } from "./pages";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from "./images/temp_logo.png";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    const links = document.getElementById("nav-links").children;
+    for (let i = 0; i < links.length; i++) {
+      let link = links[i];
+      if (link.href === window.location.href) link.style.fontWeight = "bold";
+    }
+
+  }, []);
+
   return (
     <div className="App">
       <header>
@@ -14,7 +24,7 @@ function App() {
       </header>
       <main>
         <nav>
-          <div className="nav-links">
+          <div id="nav-links" className="nav-links">
             <a href="/">Home</a>
             <a href="/gallery">Gallery</a>
           </div>
