@@ -1,6 +1,6 @@
 import "../styles/PackageEdit.scss"
 import React, { useState } from "react";
-import { Card, CardEdit } from "../components";
+import { Card, CardEdit, PkgEditForm } from "../components";
 import { Col, Input, InputGroup, Row } from 'reactstrap';
 import { useParams, Link } from "react-router-dom";
 
@@ -16,6 +16,8 @@ const tempCardData = [
 
 const PackageEdit = () => {
   const packageId = useParams().id;
+  const [editingPkg, setEditingPkg] = useState(false);
+  const togglePkg = () => setEditingPkg((e) => !e);
   const [editingCard, setEditingCard] = useState(false);
   const toggleCard = () => setEditingCard((e) => !e);
   const [edCard, setEdCard] = useState({});
@@ -24,12 +26,17 @@ const PackageEdit = () => {
 
   return (
     <div className="package-edit">
-      <h1>Slide card editor</h1>
+      <PkgEditForm show={editingPkg} toggle={togglePkg}
+        style={editingPkg ? {display: "block"} : {display: "none"}} />
+      
       <div className="page-head">
-        <button className="text-button">Edit properties</button>
+      <h1>Editor: output</h1>
         <Link className="text-button" to="/output.apkg" target="_blank" download>Export .APKG</Link>
+      </div>
+      <div className="page-head">
+        <button className="text-button" onClick={() => console.log("add card")}>+ Add card</button>
         <InputGroup>
-          <Input />
+          <Input placeholder="Search questions..." />
           <button className={"text-button"}>Search</button>
         </InputGroup>
       </div>

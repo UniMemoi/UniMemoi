@@ -89,7 +89,7 @@ const changePage = () => {
             className={"text-button"}>+ Add Topic</button>
 
         <InputGroup>
-          <Input />
+          <Input placeholder="Search package..." />
             
           <button className={"text-button"}>Search</button>
         </InputGroup>

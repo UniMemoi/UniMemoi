@@ -13,6 +13,7 @@
 .App {
   display: flex;
   flex-direction: column;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
 header, footer {
@@ -52,9 +53,10 @@ footer {
   background-color: var(--function-color);
   color: #FFFFFF;
   border: 0;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
+  margin: auto 0.5rem;
   font-size: 1.5rem;
-  padding: 0 1rem;
+  padding: 0.25rem 1rem;
   text-decoration: none;
 }
 
