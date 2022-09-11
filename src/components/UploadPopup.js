@@ -7,7 +7,7 @@ function UploadPopup(props) {
         <div className="popup-box">
              <div className="box">
                  <div className="close-container">
-                     <span className="close-icon" onClick={props.handleClose}>x</span>
+                     <span className="close-icon" onClick={props.handleClose}>&#215;</span>
                  </div>
                 {props.content}
             </div>
