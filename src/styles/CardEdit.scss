@@ -1,15 +1,11 @@
 .content .card-edit {
 
-  .topics {
+  .card-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: nowrap;
     margin: 1rem;
-
-    .input-group {
-      margin: 0 1rem;
-    }
 
   }
 
@@ -36,6 +32,12 @@
 
     .card-page {
       grid-area: page;
+    }
+
+    .card-set {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
     }
   }
 

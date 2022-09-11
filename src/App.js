@@ -2,7 +2,7 @@ import "./styles/Global.scss";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home, Gallery, CardEdit } from "./pages";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import logo from "./images/temp_logo.png";
+import logo from "/public/temp_logo.png";
 
 function App() {
   return (

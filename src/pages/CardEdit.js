@@ -21,6 +21,7 @@ const CardEdit = () => {
 
   return (
     <div className="card-edit">
+
         <div className="card-container">
           <div className={"card-grid"}>
             <Row md="4">
@@ -30,6 +31,7 @@ const CardEdit = () => {
             </Row>
           </div>
         </div>
+        
     </div>
   );
 }
