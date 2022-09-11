@@ -46,15 +46,15 @@ const Gallery = () => {
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
-
-  const goToCardEdit = () => {
-    setIsOpen(!isOpen);
-
-  }
+  
+const changePage = () => {
+  window.location.href = "/card/1";
+  return false;
+}
 
   const popupContent = 
   <div>
-      <form action="/upload" method="POST" encType="multipart/form-data"  className="popup-content">
+      <form action="" method="" encType="multipart/form-data"  className="popup-content" onSubmit={changePage}>
         <div>
           <label for="avatar">Upload a slide (.ppt) file: </label>
         
@@ -65,16 +65,11 @@ const Gallery = () => {
         </div>
 
         <button
-            type="submit"
+            type="reset"
             value="Submit"
             className={"text-button"}
-            onClick="changePage"
+            onClick={changePage}
         > Confirm </button>
-        <script>
-          function changePage() {
-              // windows.location.href = link("https://google.com");
-          }
-        </script>
       </form>
   </div>;
 

@@ -22,7 +22,7 @@ const CardEdit = () => {
   return (
     <div className="card-edit">
         <div className="card-container">
-        <div className={"card-grid"}>
+          <div className={"card-grid"}>
             <Row md="4">
               {cardData.map((c, i) =>
                 <Col key={i}><Card front={c.front} back={c.back}/></Col>
