@@ -1,0 +1,181 @@
+[page 1]
+Week 2 – Physical Layer Contd
+COMP90007
+Internet Technologies
+[page 2]
+Wireless Transmission
+Mobile users requires a mobility enabled network - contrast with the wired networks 
+Wireless networks can provide advantages even in fixed location environments
+"There are many types of wireless data transmission networks, but they all have a common basis – electromagnetic wave propagation"
+Unlike previous mediums wireless signals are broadcasted over a region
+Potential signal collisions >> Need regulations
+[page 3]
+Electromagnetic Spectrum
+Variety of sets of frequencies are for different things:
+Radio: wide-area broadcast; 
+Infrared/Light: line-of-sight 
+Microwave: LANs and 3G/4G; 
+""
+[page 4]
+ElectroMagnetic (EM) Spectrum
+<img src='image_on_page4.png' />
+"Number of oscillations per second of a wave is called frequency, measured in Hertz (Hz)."
+Distance between two consecutive minima or maxima is called wavelength.
+All EM waves travel at same speed (speed of light)
+Fundamental relationship:
+Wavelength x Frequency = Speed of Light
+Units: (m) x (1/s) = (m/s) 
+<img src='image_on_page4.png' />
+[page 5]
+Wireless vs. Wires/Fiber
+Wireless:
+Easy and inexpensive to deploy
+Naturally supports mobility
+Naturally supports broadcast
+Transmissions interfere and must be managed
+Signal strengths hence data rates vary greatly
+Wires/Fiber:
+Easy to engineer a fixed data rate over point-to-point links
+"Can be expensive to deploy, esp. over distances"
+Doesn’t readily support mobility or broadcast
+""
+[page 6]
+Communication Satellites
+Satellites are effective for broadcast distribution and anywhere/anytime communications
+Kinds of Satellites 
+Geostationary (GEO) Satellites 
+Medium-Earth Orbit (MEO) Satellites 
+Low-Earth Orbit (LEO) Satellites 
+""
+Satellites vs. Fiber is a key comparison
+""
+[page 7]
+Kinds of Satellites
+"Satellites and their properties vary by altitude: Geostationary (GEO), Medium-Earth Orbit, (MEO), and Low-Earth Orbit (LEO)"
+[page 8]
+Geostationary Satellites
+"GEO satellites orbit 35,000 km above a fixed location"
+VSAT (computers) can communicate with the help of a hub
+"Different bands (L, S, C, Ku, Ka) in the GHz are in use but may be crowded or susceptible to rain."
+""
+GEO satellite
+[page 9]
+Low-Earth Orbit Satellites
+<img src='image_on_page9.png' />
+Systems such as Iridium use many low-latency satellites for coverage and route communications via them
+<img src='image_on_page9.png' />
+The Iridium satellites form six necklaces around the earth.
+<img src='image_on_page9.png' />
+[page 10]
+Satellite vs. Fiber
+Satellite:
+Can rapidly set up anywhere/anytime communications (after satellites have been launched)
+Can broadcast to large regions
+Limited bandwidth and interference to manage 
+Fiber:
+Enormous bandwidth over long distances
+Installation can be more expensive/difficult
+""
+[page 11]
+Lets Look at Further Details:Putting Signals on a Copper Wire 
+""
+V
+Time
+Direct Current 
+"(e.g.,a 9V battery)"
+Alternating Current (currents 
+at home appliances)
+9V
+[page 12]
+Who found out Electromagnetic Waves?
+<img src='image_on_page12.jpg' />
+<img src='image_on_page12.jpg' />
+Electromagnetism was first predicted by Maxwell
+<img src='image_on_page12.jpg' />
+<img src='image_on_page12.jpg' />
+Later Hertz has proved they exist
+His name is used as a unit of frequency now
+<img src='image_on_page12.jpg' />
+<img src='image_on_page12.jpg' />
+[page 13]
+Origins of Electrical Signals
+<img src='image_on_page13.jpg' />
+Electromagnetic induction is at the origins of putting signals on to a wire
+""
+Michael Faraday is the father of this
+""
+All these famous scientists lived in 19th century
+<img src='image_on_page13.jpg' />
+[page 14]
+Faraday Disk as An Electric Generator
+<img src='image_on_page14.jpg' />
+[page 15]
+An Early Dynamo
+<img src='image_on_page15.jpg' />
+[page 16]
+Another Example
+<img src='image_on_page16.jpg' />
+[page 17]
+A Turbine
+<img src='image_on_page17.jpg' />
+[page 18]
+But How Bits Look as a Signal
+"Information on wire transmitted by varying a physical property e.g., voltage, current etc"
+"Generating a periodic function is needed, imagine a simple Sine function for example"
+"E.g., the sine function: c*sin(ax+b): "
+"Three things can change the behaviour of this function: c: Amplitude, a:Frequency and b:Phase"
+[page 19]
+""
+"Change in Amplitude, Frequency, & Phase"
+Change in Amplitude
+Change in Frequency
+Change in Phase
+[page 20]
+Modulation is the term used
+"Modulating the amplitude, frequency/phase of a carrier signal sends bits in a (non-zero) frequency range"
+[page 21]
+What Kind of Links We Can Have
+Full-duplex link
+Used for transmission in both directions at once
+"e.g., use different twisted pairs for each direction"
+Half-duplex link
+"Both directions, but not at the same time"
+"e.g., senders take turns on a channel "
+Simplex link
+Only one fixed direction at all times; not common in communications
+[page 22]
+Multiplexing is used for sharing
+When multiple sources want to put things on to a medium
+Time Division Multiplexing 
+Frequency Division Multiplexing
+""
+Statistical Multiplexing (for curious readers)
+Code Division Multiple Access (we will mention later)
+[page 23]
+Time Division Multiplexing
+Users can send according to a fixed schedule
+Slotted access to the full speed of the media
+1
+2
+3
+1
+2
+3
+1
+2
+3
+[page 24]
+Frequency Division Multiplexing 
+Users can only use specific frequencies to send their data
+1
+2
+3
+1
+2
+3
+1
+2
+3
+Freq.(Hz)
+""
+""
