@@ -5,16 +5,22 @@ import UploadPopup from "./UploadPopup";
 
 const CardEdit = (props) => {
   return (
-    <UploadPopup style={props.style}>
+    <UploadPopup show={props.show} style={props.style} toggle={props.toggle}>
       <form>
         <h2>Edit card</h2>
-        <h3>{"Question (drag & drop image in box)"}</h3>
+        <h4>{"Question"}</h4>
         <textarea placeholder="Enter question..." />
-        <h3>{"Answer (drag & drop image in box)"}</h3>
+        <h4>{"Answer"}</h4>
         <textarea placeholder="Enter answer..." />
         <div className="button-list">
-          <button>Cancel</button>
-          <button>Confirm</button>
+          <button onClick={(e) => {
+            e.preventDefault();
+            props.toggle();
+            props.clearCard();
+          }}>Cancel</button>
+          <button onClick={(e) => {
+            console.log("card edited!")
+          }}>Confirm</button>
         </div>
       </form>
     </UploadPopup>

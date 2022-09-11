@@ -80,9 +80,7 @@ const changePage = () => {
   return (
     <div className="gallery">
       <div className="topics">
-          {isOpen && (
-              <UploadPopup handleClose={togglePopup}>{popupContent}</UploadPopup>
-            )}
+        <UploadPopup show={isOpen} toggle={togglePopup}>{popupContent}</UploadPopup>
 
         <button 
             type="button"

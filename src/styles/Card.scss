@@ -20,3 +20,7 @@
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+.modal textarea {
+  width: -webkit-fill-available;
+}

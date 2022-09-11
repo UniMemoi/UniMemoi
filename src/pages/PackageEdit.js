@@ -1,5 +1,5 @@
 import "../styles/PackageEdit.scss"
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardEdit } from "../components";
 import { Col, Input, InputGroup, Row } from 'reactstrap';
 import { useParams } from "react-router-dom";
@@ -16,6 +16,9 @@ const tempCardData = [
 
 const PackageEdit = () => {
   const packageId = useParams().id;
+  const [editing, setEditing] = useState(false);
+  const toggle = () => setEditing((e) => !e);
+  const [edCard, setEdCard] = useState({});
 
   // cardData = ...
 
@@ -32,7 +35,10 @@ const PackageEdit = () => {
         <div className={"card-grid"}>
           <Row className="gy-4" md="1" lg="2" xl="3" xxl="4">
             {tempCardData.map((p, i) => <Col key={i}>
-              <button onClick={() => console.log(123131)}>
+              <button onClick={() => {
+                setEditing(true);
+                setEdCard(p);
+                }}>
                 <Card isFront>{p.front}</Card>
                 <Card>{p.back}</Card>
               </button>
@@ -41,7 +47,9 @@ const PackageEdit = () => {
         </div>
         <div className={"card-page"}>{"<< < 1 of 1 > >>"}</div>
       </section>
-      <CardEdit style={{display: "none"}} />
+      <CardEdit show={editing} toggle={toggle}
+        card={edCard} clearCard={() => setEdCard({})}
+        style={editing ? {display: "block"} : {display: "none"}} />
     </div>
   );
 }

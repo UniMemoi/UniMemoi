@@ -1,17 +1,17 @@
 import React from "react";
+import { Modal, ModalBody } from "reactstrap";
 import "../styles/UploadPopup.scss";
  
 function UploadPopup(props) {
+
     // Adapted from https://www.cluemediator.com/create-simple-popup-in-reactjs
     return (
-        <div className="popup-box" style={props.style}>
-             <div className="box">
-                 <div className="close-container">
-                     <span className="close-icon" onClick={props.handleClose}>&#215;</span>
-                 </div>
-                {props.children}
-            </div>
-         </div>
+        <Modal isOpen={props.show} toggle={props.toggle}>
+        <ModalBody>
+            <button className="close-icon" onClick={e => {e.preventDefault(); props.toggle()}}>&#215;</button>
+            {props.children}
+        </ModalBody>
+    </Modal>
     );
 }
 
