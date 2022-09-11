@@ -3,21 +3,19 @@ import collections.abc
 from pptx import Presentation
 from pptx.enum.shapes import MSO_SHAPE_TYPE
 import csv
-import PyPDF2
+
 
 
 '''
-two functions are implemented: 
 pptToCsv : extract words content in .ppt to .csv, also extract .jpg and .png from .ppt.
-pdfToCsv : extract words in .pdf to .csv   
-    
 '''
 
 
 class pptToCsv(object):
     '''
-    filePath   : the file path where .ppt source is, the file name need to be included.
-    csvFileName: the csv name, user don't need to add .csv at the end.
+    pptPath    :the file path where .ppt source is, the file name need to be included.
+    folderPath : the folder where images and word contents are stored. 
+    csvName.   : the csv name, user don't need to add .csv at the end.
     '''
     def __init__(self, pptPath ,folderPath, csvName) -> None:
         self.csvName = csvName
@@ -78,40 +76,13 @@ class pptToCsv(object):
             for item in imgNameList:
                 name = item[1]
                 f.write(f'{name}\n')
-#to do list
-# output a txt of images name list
 
 
-class pdfToCsv(object):
-    """
-    folderPath : the folder path where the .csv will be stored.
-    pdfPath    : the file path where .pdf source is, the file name need to be included.
-    csvName    : the csv name, user don't need to add .csv at the end.
-    """
-    def __init__(self, folderPath, pdfPath, csvName) -> None:
-        self.csvpath = f'{folderPath}{csvName}' 
-        self.pdfPath = pdfPath
-    
-    
-    #each page in output csv file, will be seperated by '#####'
-    def main(self):
-        f = open(f'{self.csvpath}.csv', 'w')
-        writer = csv.writer(f)
-        with open(self.pdfPath, "rb") as pdf_file:
-            read_pdf = PyPDF2.PdfFileReader(pdf_file)
-            count = '#####'
-            for page in read_pdf.pages:
-                writer.writerow([count])
-                page_content = page.extractText()
-                writer.writerow([page_content])
-        
-        f.close()
 
-        
-        
+
+
 
 if __name__ == '__main__':
     pptToCsv = pptToCsv('/Users/adamliu/Desktop/semester1/internet technilogy/Week2-Lecture3.pptx',"/Users/adamliu/python/WIT hackthon 2022/UniMemoi/backend/","test")
     pptToCsv.main()
-#     pdfToCsv = pdfToCsv("/Users/adamliu/python/WIT hackthon 2022/UniMemoi/backend/","/Users/adamliu/Desktop/semester1/algorithm and Complexity/01.pdf", "test")
-#     pdfToCsv.main()
+    
