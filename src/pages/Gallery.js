@@ -2,7 +2,6 @@ import { Card, Filter } from "../components";
 import "../styles/Gallery.scss"
 import { UploadPopup } from "../components";
 import { Col, InputGroup, Row } from 'reactstrap';
-import { FaSearch } from 'react-icons/fa';
 import React from "react";
 
 
@@ -28,23 +27,18 @@ const sortOpts = {
   "Name": sortName
 }
 
-const filterSubj = (v) => {
-  console.log(`filter by subj ${v}`);
+const filterSubj = () => {
+  console.log("filter by subj");
 }
 
-const filterDateFrom = (v) => {
-  console.log(`filter by date from ${v}`);
+const filterDate = () => {
+  console.log("filter by date");
 }
 
-const filterDateTo = (v) => {
-  console.log(`filter by date to ${v}`);
+const filtOpts = {
+  "Date": filterDate,
+  "Subject": filterSubj
 }
-
-const filtOpts = [
-  ["subject", filterSubj, "text"],
-  ["date from", filterDateFrom, "date"],
-  ["date to", filterDateTo, "date"],
-]
 
 const Gallery = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -52,26 +46,31 @@ const Gallery = () => {
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
-
-  const confirmUpload = () => {
-    setIsOpen(!isOpen);
-  }
+  
+const changePage = () => {
+  window.location.href = "/card/1";
+  return false;
+}
 
   const popupContent = 
-  <div className="popup-content">
-      <div>
-        <label for="avatar">Upload a slide (.ppt) file: </label>
+  <div>
+      <form action="" method="" encType="multipart/form-data"  className="popup-content" onSubmit={changePage}>
+        <div>
+          <label for="avatar">Upload a slide (.ppt) file: </label>
         
-        <input type="file"
-          id="slide" name="slide"
-          accept=".pptx, .pdf">
-        </input>
-      </div>
+          <input type="file"
+            id="slide" name="slide"
+            accept=".pptx, .pdf">
+          </input>
+        </div>
 
-      <button
-          className={"text-button"}
-          onClick={confirmUpload}
-      > Confirm </button>
+        <button
+            type="reset"
+            value="Submit"
+            className={"text-button"}
+            onClick={changePage}
+        > Confirm </button>
+      </form>
   </div>;
 
   return (
@@ -92,6 +91,7 @@ const Gallery = () => {
 
         <InputGroup>
           <input />
+            
           <button className={"text-button"}>Search</button>
         </InputGroup>
 
@@ -106,19 +106,11 @@ const Gallery = () => {
             })}
           </Filter>
           <Filter action="Filter">
-            {filtOpts.map((item) => {
-              return <InputGroup className={"ndropdown-item nav-filt"} key={item[0]}>
-                <input
-                  type="text" id={`${item[0]}-input`} 
-                  onFocusCapture={e => e.target.type=item[2]}
-                  onBlurCapture={e => e.target.type="text"}
-                  placeholder={`Enter ${item[0]}...`} />
-                <button onClick={() => {
-                  item[1](document.getElementById(`${item[0]}-input`).value)
-                }}><FaSearch /></button>
-              </InputGroup>
+            {Object.entries(filtOpts).map((item) => {
+              return <button className={"ndropdown-item"} onClick={item[1]}>
+                {item[0]}
+              </button>
             })}
-            <button className={"ndropdown-item"}>Clear</button>
           </Filter>
         </div>
         <div className={"card-grid"}>
