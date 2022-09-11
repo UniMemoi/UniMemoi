@@ -26,8 +26,8 @@ const PackageEdit = () => {
     <div className="package-edit">
       <h1>Slide card editor</h1>
       <div className="page-head">
-        <button>Edit properties</button>
-        <Link className="text-button" to="/index.html" target="_blank" download>Export .APKG</Link>
+        <button className="text-button">Edit properties</button>
+        <Link className="text-button" to="/output.apkg" target="_blank" download>Export .APKG</Link>
         <InputGroup>
           <Input />
           <button className={"text-button"}>Search</button>
