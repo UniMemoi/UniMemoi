@@ -1,13 +1,21 @@
 .mcard {
   width: 7.5rem;
   height: 10rem;
+  border-radius: 10px;
+  border: 0.5rem solid var(--card-border-color);
+  padding-bottom: 0.5rem;
 }
 
 .mcard-front {
-  background-color: var(--card-color) !important;
+  background-color: var(--card-color);
+  flex-direction: column;
+  display: flex;
+  font-weight: bold;
+  justify-content: center;
 }
 
 .mcard-back {
-  background-color: #ffffff !important;
-  overflow: scroll;
+  background-color: #ffffff;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }

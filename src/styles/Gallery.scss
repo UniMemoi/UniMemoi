@@ -55,6 +55,12 @@
 
     .card-grid {
       grid-area: card;
+      margin: 2rem 1rem;
+
+      a {
+        text-decoration: none;
+        color: #000000;
+      }
     }
 
     .card-page {

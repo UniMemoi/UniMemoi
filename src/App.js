@@ -16,7 +16,7 @@ function App() {
         <nav>
           <div className="nav-links">
             <a href="/">Home</a>
-            <a href="gallery">Gallery</a>
+            <a href="/gallery">Gallery</a>
           </div>
           <div>
             <h3>About us</h3>

@@ -1,18 +1,18 @@
 import { Card, Filter } from "../components";
 import "../styles/Gallery.scss"
 import { UploadPopup } from "../components";
-import { Col, InputGroup, Row } from 'reactstrap';
+import { Col, Input, InputGroup, Row } from 'reactstrap';
 import React from "react";
 import { FaSearch } from 'react-icons/fa';
 
 
-const tempCard = {
-  front: "Topic",
-  back: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+const tempPkgCard = {
+  topic: "Package",
+  id: 1234
 }
 
-const tempCardList = [
-  tempCard, tempCard, tempCard, tempCard, tempCard, tempCard, tempCard
+const tempPackageList = [
+  tempPkgCard, tempPkgCard, tempPkgCard, tempPkgCard, tempPkgCard, tempPkgCard, tempPkgCard
 ]
 
 const sortDate = () => {
@@ -96,7 +96,7 @@ const changePage = () => {
             className={"text-button"}>+ Add Topic</button>
 
         <InputGroup>
-          <input />
+          <Input />
             
           <button className={"text-button"}>Search</button>
         </InputGroup>
@@ -128,13 +128,15 @@ const changePage = () => {
           </Filter>
         </div>
         <div className={"card-grid"}>
-          <Row md="4">
-            {tempCardList.map((c, i) =>
-              <Col key={i}><Card front={c.front} back={c.back}/></Col>
-            )}
+          <Row className="gy-4" xs="1" sm="2" md="3" lg="4" xl="5" xxl="6">
+            {tempPackageList.map((p, i) => <Col key={i}>
+              <a href={`/package/${p.id}`}>
+                <Card isFront>{p.topic}</Card>
+              </a>
+            </Col>)}
           </Row>
         </div>
-        <div className={"card-page"}>flip page</div>
+        <div className={"card-page"}>{"<< < 1 of 1 > >>"}</div>
       </section>
     </div>
   )
