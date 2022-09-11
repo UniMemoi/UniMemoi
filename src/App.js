@@ -14,9 +14,13 @@ function App() {
       </header>
       <main>
         <nav>
-          <div>
+          <div className="nav-links">
             <a href="/">Home</a>
             <a href="gallery">Gallery</a>
+          </div>
+          <div>
+            <h3>About us</h3>
+            <p>UniMemoi, created by Raiten Menimemo</p>
           </div>
         </nav>
         <div className="content">
@@ -29,7 +33,7 @@ function App() {
           </Router>
         </div>
       </main>
-      <footer>Footer</footer>
+      <footer>© UniMemoi, 2022</footer>
     </div>
   );
 }
