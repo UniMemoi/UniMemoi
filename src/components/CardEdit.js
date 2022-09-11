@@ -13,12 +13,12 @@ const CardEdit = (props) => {
         <h4>{"Answer"}</h4>
         <textarea placeholder="Enter answer..." />
         <div className="button-list">
-          <button onClick={(e) => {
+          <button className="text-button alt" onClick={(e) => {
             e.preventDefault();
             props.toggle();
             props.clearCard();
           }}>Cancel</button>
-          <button onClick={(e) => {
+          <button className="text-button" onClick={(e) => {
             console.log("card edited!")
           }}>Confirm</button>
         </div>
